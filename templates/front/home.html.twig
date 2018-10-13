@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello !{% endblock %}
+
+{% block body %}
+<h1>Liste des circuits</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Identifiant</th>
+            <th>Description</th>
+            <th>Pays de départ</th>
+            <th>Ville de départ</th>
+            <th>Durée du circuit</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for prog_circuit in prog_circuits %}
+                <tr>
+                    <td>{{ prog_circuit.circuit.description }}</td>
+                    <td>{{ prog_circuit.circuit.paysDepart }}</td>
+                    <td>{{ prog_circuit.circuit.villeDepart }}</td>
+                    <td>{{ prog_circuit.circuit.dureeCircuit }}</td>
+                    <td><a href="{{ path('front_circuit_show', {id: prog_circuit.id}) }}">détails</a></td>
+                </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">no circuits found</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %} {# body #}

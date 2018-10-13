@@ -48,9 +48,15 @@ class Circuit
      */
     private $villeArrivee;
 
+    /**
+     * @ORM\OneToMany(targetEntity="App\Entity\ProgrammationCircuit", mappedBy="circuit")
+     */
+    private $programmationCircuit;
+
     public function __construct()
     {
         $this->etapes = new ArrayCollection();
+        $this->programmationCircuit = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -145,6 +151,37 @@ class Circuit
     public function setVilleArrivee(?string $villeArrivee): self
     {
         $this->villeArrivee = $villeArrivee;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|ProgrammationCircuit[]
+     */
+    public function getProgrammationCircuit(): Collection
+    {
+        return $this->programmationCircuit;
+    }
+
+    public function addProgrammationCircuit(ProgrammationCircuit $programmationCircuit): self
+    {
+        if (!$this->programmationCircuit->contains($programmationCircuit)) {
+            $this->programmationCircuit[] = $programmationCircuit;
+            $programmationCircuit->setCircuit($this);
+        }
+
+        return $this;
+    }
+
+    public function removeProgrammationCircuit(ProgrammationCircuit $programmationCircuit): self
+    {
+        if ($this->programmationCircuit->contains($programmationCircuit)) {
+            $this->programmationCircuit->removeElement($programmationCircuit);
+            // set the owning side to null (unless already changed)
+            if ($programmationCircuit->getCircuit() === $this) {
+                $programmationCircuit->setCircuit(null);
+            }
+        }
 
         return $this;
     }

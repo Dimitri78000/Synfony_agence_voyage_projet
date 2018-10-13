@@ -1,0 +1,65 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello !{% endblock %}
+
+{% block body %}
+<h1>Circuit {{ prog_circuit.circuit.description }}</h1>
+
+<table class="table">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ prog_circuit.circuit.id }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ prog_circuit.circuit.description }}</td>
+        </tr>
+
+        <tr>
+            <th>Pays de départ</th>
+            <td>{{ prog_circuit.circuit.paysDepart }}</td>
+        </tr>
+        <tr>
+            <th>Ville de départ</th>
+            <td>{{ prog_circuit.circuit.villeDepart }}</td>
+        </tr>
+        <tr>
+            <th>Durée du circuit</th>
+            <td>{{ prog_circuit.circuit.dureeCircuit }}</td>
+        </tr>
+
+        <tr>
+            <th>Étapes du circuit</th>
+            <td>
+                <ol>
+                    {% for etape in prog_circuit.circuit.etapes %}
+                        <li>{{ etape.villeEtape }}</li>
+                    {% endfor %}
+                    {# etapes #}
+                </ol>
+            </td>
+        </tr>
+
+        <tr>
+            <th>Date de départ</th>
+            <td>{{ prog_circuit.dateDepart.format('l jS F Y') }}</td>
+        </tr>
+
+        <tr>
+            <th>Nombre de personnes</th>
+            <td>{{ prog_circuit.nombrePersonnes }}</td>
+        </tr>
+
+        <tr>
+            <th>Prix</th>
+            <td>{{ prog_circuit.prix }}€</td>
+        </tr>
+
+    </tbody>
+</table>
+
+<a href="{{ path('frontoffice_home') }}">retour à l'accueil</a>
+
+{% endblock %}
+{# body #}
