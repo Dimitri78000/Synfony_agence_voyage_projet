@@ -23,7 +23,7 @@
                     <td>{{ prog_circuit.circuit.villeDepart }}</td>
                     <td>{{ prog_circuit.circuit.dureeCircuit }}</td>
                     <td>{{ prog_circuit.prix }}</td>
-                    <td><a href="{{ path('likes', {id:prog_circuit.id}) }}">{{ (prog_circuit.id not in likes) ? 'J\'aime' : '🖤' }}</a></td>
+                    <td><a href="{{ path('likes', {id:prog_circuit.id}) }}">{{ (prog_circuit.id not in likes) ? 'J\'aime' : '💓' }}</a></td>
                     <td><a href="{{ path('front_circuit_show', {id: prog_circuit.id}) }}">détails</a></td>
                 </tr>
         {% else %}
