@@ -1,0 +1,33 @@
+body
+{
+	max-width: 1180px;
+	margin:0 auto;
+	background-image: url("/img/holidays.jpg");
+	background-repeat: no-repeat;
+	background-position: top center;
+}
+
+.nom_agence_bloc
+{
+	margin-bottom: 110px;
+}
+.nom_agence
+{
+	text-align: center;
+	position: relative;
+	left:120px;
+	color:white;
+	margin-right:700px;
+}
+
+.text_footer
+{
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 20px;
+}
+
+.center_bloc
+{
+	text-align: center;
+}

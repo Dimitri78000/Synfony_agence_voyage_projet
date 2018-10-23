@@ -9,6 +9,7 @@
         "symfony/flex": "^1.0",
         "symfony/force-lowest": "=4.1",
         "symfony/framework-bundle": "^4.1",
+        "knplabs/knp-menu-bundle": "^2.2",
         "symfony/lts": "^4@dev",
         "symfony/yaml": "^4.1",
         "doctrine/doctrine-fixtures-bundle": "^3.0",

@@ -2,11 +2,10 @@
 
 {% block title %}Hello !{% endblock %}
 
-{% block body %}
-<h1>Circuit {{ prog_circuit.circuit.description }}</h1>
+{% block main %}
+<h2>Circuit {{ prog_circuit.circuit.description }}</h2>
 
 <table class="table">
-    <tbody>
         <tr>
             <th>Id</th>
             <td>{{ prog_circuit.circuit.id }}</td>
@@ -55,11 +54,8 @@
             <th>Prix</th>
             <td>{{ prog_circuit.prix }}€</td>
         </tr>
-
-    </tbody>
 </table>
 
 <a href="{{ path('frontoffice_home') }}">retour à l'accueil</a>
 
-{% endblock %}
-{# body #}
+{% endblock %} {# main #}
