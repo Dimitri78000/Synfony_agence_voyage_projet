@@ -2,8 +2,8 @@
 
 {% block title %}Hello !{% endblock %}
 
-{% block body %}
-<h1>Liste des circuits</h1>
+{% block main %}
+<h2>Liste des circuits</h2>
 
 <table class="table">
     <thead>
@@ -12,6 +12,7 @@
             <th>Pays de départ</th>
             <th>Ville de départ</th>
             <th>Durée du circuit</th>
+            <th>Prix</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@
                     <td>{{ prog_circuit.circuit.paysDepart }}</td>
                     <td>{{ prog_circuit.circuit.villeDepart }}</td>
                     <td>{{ prog_circuit.circuit.dureeCircuit }}</td>
+                    <td>{{ prog_circuit.prix }}</td>
                     <td><a href="{{ path('likes', {id:prog_circuit.id}) }}">{{ (prog_circuit.id not in likes) ? 'J\'aime' : '🖤' }}</a></td>
                     <td><a href="{{ path('front_circuit_show', {id: prog_circuit.id}) }}">détails</a></td>
                 </tr>
@@ -32,4 +34,4 @@
     </tbody>
 </table>
 
-{% endblock %} {# body #}
+{% endblock %} {# main #}
