@@ -8,7 +8,6 @@
 <table class="table">
     <thead>
         <tr>
-            <th>Identifiant</th>
             <th>Description</th>
             <th>Pays de départ</th>
             <th>Ville de départ</th>
@@ -22,6 +21,7 @@
                     <td>{{ prog_circuit.circuit.paysDepart }}</td>
                     <td>{{ prog_circuit.circuit.villeDepart }}</td>
                     <td>{{ prog_circuit.circuit.dureeCircuit }}</td>
+                    <td><a href="{{ path('likes', {id:prog_circuit.id}) }}">{{ (prog_circuit.id not in likes) ? 'J\'aime' : '🖤' }}</a></td>
                     <td><a href="{{ path('front_circuit_show', {id: prog_circuit.id}) }}">détails</a></td>
                 </tr>
         {% else %}
