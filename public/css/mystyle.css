@@ -9,13 +9,13 @@ body
 
 .nom_agence_bloc
 {
-	margin-bottom: 110px;
+	margin-bottom: 15px;
 }
 .nom_agence
 {
 	text-align: center;
 	position: relative;
-	left:120px;
+	left:155px;
 	color:white;
 	margin-right:700px;
 }
