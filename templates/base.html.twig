@@ -8,22 +8,22 @@
         	<link rel="stylesheet" href="/css/mystyle.css">
 			<script src="/js/bootstrap.min.js"></script>
         {% endblock %}
-    </head>
-    <body>
-
-        {% block body %}
-	{% block menu %}
+        {% block menu %}
 	<div class="nom_agence_bloc">
 		<a class="nom_agence" href="/"> <h1>New Horizon</h1></a>
 	</div>
 	<div class="nav">
 		<a href="/" class="nav_txt">Accueil</a>
-		<a href="/home" class="nav_txt">Les circuits</a>
+		<a href="/home" class="nav_txt">Circuits</a>
 		<a href="/" class="nav_txt">Promotion</a>
 		<a href="/" class="nav_txt">Mon compte</a>
 	</div>
 
 	{% endblock %} {# menu #}
+    </head>
+    <body>
+
+        {% block body %}
 
     {% block main %}MAIN{% endblock %} {# main #}
 
